@@ -9,15 +9,17 @@ function Products() {
       .then((data) => setProducts(data));
   }, []);
 
+  if (products.length == 0) return "loading...";
+
   return (
     <>
       <h2>Products:</h2>
       {products &&
-        products.map((products) => {
+        products.map((product) => (
           <p>
-            {products.name} - $ {products.price}
-          </p>;
-        })}
+            {product.name} - $ {product.price}
+          </p>
+        ))}
     </>
   );
 }
