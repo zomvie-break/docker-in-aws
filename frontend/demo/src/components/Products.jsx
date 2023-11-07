@@ -9,7 +9,7 @@ function Products() {
       .then((data) => setProducts(data));
   }, []);
 
-  if (products.length == 0) return "loading...";
+  if (products.length === 0) return "loading...";
 
   return (
     <>
