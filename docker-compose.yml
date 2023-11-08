@@ -22,7 +22,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - static_files:/usr/src/app
+      - static_files:/home/app/static_files
 
 volumes:
   static_files:
