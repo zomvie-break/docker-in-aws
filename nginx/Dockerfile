@@ -4,3 +4,4 @@ RUN rm -f /etc/nginx/config.d/default.conf
 
 COPY ./conf.d/default.conf /etc/nginx/config.d/default.conf
 
+CMD ["nginx", "-g", "daemon off;"]
