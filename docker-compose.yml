@@ -1,0 +1,28 @@
+version: "1"
+
+services:
+  api:
+    container_name: api
+    build:
+      context: ./api
+    ports:
+      - "8000:8000"
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - static_files:/usr/app/public
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - static_files:/usr/src/app
+
+volumes:
+  static_files:
